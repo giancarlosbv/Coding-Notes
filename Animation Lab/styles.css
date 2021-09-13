@@ -1,0 +1,98 @@
+body{
+    padding-top: 10%;
+    background-color: pink;
+    display: flex;
+    justify-content: space-evenly;
+}
+.container{
+    border-style: dashed;
+    height:500px;
+    width: 500px;
+}
+.container2{
+    border-style: dashed;
+    height:200px;
+    width: 200px;
+}
+
+.box{
+    height:100px;
+    width: 100px;
+    
+}
+
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}
+.yellow{
+    animation-name: openup;
+    background-color: yellow;
+    transform-origin: bottom right;
+}
+.green{
+    animation-name: openup2;
+    background-color: green;
+    transform-origin: bottom left;
+}
+.red2{
+    animation-name: openup;
+    transform-origin: top left;
+}
+.blue2{
+    animation-name: openup2;
+    transform-origin: top right;
+}
+
+.box1{
+    transition-property: width;
+    transition-timing-function: ease-in-out;
+    transition-duration: 1s;
+}
+.box2{
+    transition-property: width;
+    transition-timing-function: ease-in-out;
+    transition-duration: 1s;
+    transition-delay:1s;
+}
+#lab1:hover .box1{
+    width:300px;
+}
+#lab1:hover .box2{
+    width:300px;
+}
+.box1:hover{
+    width:300px;
+}
+
+
+#lab2{
+    position: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr ;
+    
+
+}
+
+@keyframes openup {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(90deg);
+    }
+}
+@keyframes openup2 {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(-90deg);
+    }
+}
+
+#lab2:hover .box {
+    animation: openup 2s ease-in-out .5s infinite alternate;
+    animation: openup2 2s ease-in-out .5s infinite alternate;
+}
