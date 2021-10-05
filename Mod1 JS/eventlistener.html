@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3 id="h3">This example uses the addEventListener() method to listen to the different types of events.</h3>
+<button ondblclick="this.innerHTML='button clicked'">click here</button>
+<p id="p1" class = "p">here is p1</p>
+<p id="p2" class = "p"onclick="this.innerHTML=myFunction()"> this is para 2</p>
+<p id="p3" class = "p">This is para3</p>
+
+<button id="myBtn1" onclick="document.getElementById('p2').innerHTML =myFunction">click here </button>
+
+<p>
+  <button id="myBtn2">Try it</button>
+</p>
+
+<hr>
+
+<input type="text" id="fname"> </input>
+
+<script>
+document.getElementById("myBtn2").addEventListener("dblclick", displayDate);
+function displayDate() {
+    var x = document.getElementsByClassName('p')
+    for (i=0;i<x.length;i++) {
+        x[i].innerHTML = Date()
+    }
+//   document.getElementById("p3").innerHTML = Date();
+}
+function myFunction() {
+  let a,b;
+  a=10;
+  b=20; 
+  return a+b;
+}
+document.getElementById("fname").addEventListener("input", caseChange);
+function caseChange() {
+  var x = document.getElementById("fname");
+  document.getElementById("p3").innerHTML = "You wrote: " + x.value.toUpperCase();
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id = p1></p>
+
+
+    
+<script>
+// Create an Animal class. 
+// The class will have animal type , age, color, legs, superPower attributes
+// Create two objects of this class - both with a unique superPower
+// Create two  methods for this class - named animalSuperPower() and animalDetails() that would display animal superpower and animal details respectively.
+const p1 = document.querySelector("#p1")
+var text = "<ul>"
+    // displayEmployees()
+    // {  
+    //   text=text+"<li>"+this.id +"  "+this.fullname + " " + this.role + "</li>";
+    //   return text;
+    // // }
+    class Animal{
+        constructor(name, type, age, color, legs, superPower) {
+            this.name = name
+            this.type = type
+            this.age = age
+            this.color = color
+            this.legs = legs
+            this.superPower = superPower
+            
+        }
+        
+        describeAnimal(){
+           let description = this.name + " is a " + this.age + " "  + " years old" + " " + this.color + " " + this.type + ". They use the power of "  + this.superPower
+           this.description = description
+       }
+       displayAnimal(){
+           text = text+"<li>" + this.description + "</li>"
+           return text
+       }
+    //    animalSuperPower(){
+    
+    
+    //     }
+    }
+
+    const Krypto = new Animal("Krypto the Superdog", "dog", 3, "white", 4, "flight and lasers")
+    Krypto.describeAnimal()
+    Krypto.displayAnimal();
+
+    const Ace = new Animal("Ace the BatHound", "dog", 3, "gray and black", 4, "gadgets")
+
+    Ace.describeAnimal()
+    Ace.displayAnimal()
+    
+
+
+    text = text+ "</ul>"
+    p1.innerHTML = text
+    </script>
+</body>
+</html>
+
+

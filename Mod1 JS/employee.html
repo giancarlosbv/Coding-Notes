@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<h1 id="company"></h1>
+<p id="p1"></p>
+<br>
+ <p id="p2"><div></div></p>
+ <p id= "p3"></p>
+
+<script>
+var text="<ul>";  
+      
+const COMPANY="<u>"+"ABC Enterprise Pvt. Limited"+"</u>";    
+var idnum=0;  //declared globally
+
+
+
+
+class Employee {
+  static count=0;
+  static budget = 0;
+      constructor(fname, lname, salary, address, designation) {
+        //instance variables or object variables
+        this.fname = fname
+        this.lname = lname
+        this.salary = salary
+        this.address = address
+        this.designation = designation
+        this.id = ++idnum
+      } //closing constuctor 
+    static countEmployees(){
+     Employee.count++;  
+    }
+    static employeeBudget(){
+      Employee.budget += 1000;
+    }
+
+    
+
+    displayEmployees()
+    {  
+      text=text+"<li>"+this.id +"  "+this.fullname + " " + this.salary + " " + this.address+ " " + this.designation+ "</li>";
+      return text;
+    }
+
+    getFullName()
+    {
+      let fullname= this.fname+" "+ this.lname;
+      this.fullname= fullname;   
+    } 
+} //closing employee class
+
+class softwareEngineer extends Employee{
+  static count = 0;
+  constructor(fname,lname,address,designation,salary)
+    {
+      super(fname,lname,address,designation,salary) //super refers to parent class 
+    }
+}
+
+class StoreEmployee extends Employee{
+  static count = 0;
+  constructor(fname,lname,address,designation,salary)
+    {
+      super(fname,lname,address,designation,salary) //super refers to parent class
+    }
+}
+
+class SchoolEmployee extends Employee{
+  static count = 0;
+  constructor(fname,lname,address,designation,salary)
+    {
+      super(fname,lname,address,designation,salary) //super refers to parent class
+
+    }
+}
+
+document.getElementById("company").innerHTML=COMPANY;
+
+const emp1 = new Employee("James", "Ford", "$15,000");
+emp1.getFullName();
+emp1.displayEmployees();
+Employee.countEmployees();
+Employee.employeeBudget();
+
+
+const emp2 = new Employee("Alice", "Thompsan", "$60,000", "silicon valley", "software developer");
+emp2.getFullName();
+emp2.displayEmployees();
+Employee.countEmployees();
+Employee.employeeBudget();
+
+// const emp3 = new Employee("Joe", "Anderson", "$30,000");
+// emp3.getFullName();
+// emp3.displayEmployees();
+// Employee.countEmployees();
+// Employee.employeeBudget();
+
+const emp4 = new Employee("Jill", "Bravo", "$100,000");
+emp4.getFullName();
+emp4.displayEmployees();
+Employee.countEmployees();
+Employee.employeeBudget();
+
+const emp5 = new Employee("Bill", "Halvorsan", "$100,000");
+emp5.getFullName();
+emp5.displayEmployees();
+Employee.countEmployees();
+Employee.employeeBudget();
+
+text=text+"</ul>";
+document.getElementById("p1").innerHTML = text;
+document.getElementById("p2").innerHTML = "Total number of employees working in this company are "+Employee.count;
+document.getElementById('p3').innerHTML = "Total cost of employee materials = $"+Employee.budget;
+
+
+
+
+person = person.Createobject
+
+const person = {
+name = john,
+age = 20,
+
+}
+// class Car {
+//   constructor(color,make,year){
+//     this.color = color;
+//     this.make = make;
+//     this.year = year; 
+//   }
+//   displayCar(){
+//     text= text + "<li>" + this.color+" "+this.make+ " " + this.year + "</li>"
+//     return text
+//   }
+// }
+// const sinuhe = new Car("Black", "Mustang", 2021)
+// sinuhe.displayCar()
+
+</script>
+
+</body>
+</html>
